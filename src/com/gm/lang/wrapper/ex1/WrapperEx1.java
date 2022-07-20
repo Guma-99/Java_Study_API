@@ -24,7 +24,7 @@ public class WrapperEx1 {
 
 		if (ch == '1' || ch == '2') {
 			age = 2022 - (1900 + age + 1);
-		} else if (ch == '3' || ch == '4'){
+		} else if (ch == '3' || ch == '4') {
 			age = 2022 - (2000 + age + 1);
 		}
 		

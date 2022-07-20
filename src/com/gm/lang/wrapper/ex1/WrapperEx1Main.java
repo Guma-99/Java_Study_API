@@ -7,7 +7,7 @@ public class WrapperEx1Main {
 		WrapperEx2 ex2 = new WrapperEx2();
 		
 		//ex1.PeopleNumber();
-		ex2.JuminCheck();
+		ex2.juminCheck();
 
 	}
 

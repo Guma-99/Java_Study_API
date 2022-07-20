@@ -5,23 +5,48 @@ import java.util.Scanner;
 public class WrapperEx2 {
 	Scanner sc = new Scanner(System.in);
 
-	public void JuminCheck() {
-		String number = "";
+	public void juminCheck() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("주민 번호 입력");
+		String jumin = "971224-1234567";
+		int count = 2;
+		int sum = 0;
+		for (int i = 0; i < jumin.length() - 1; i++) {
+			// 1. substring() : String
+			// String num = jumin.substring(i, i+1);//1,2 2,3
+			// int n = Integer.parseInt(num);
+			// 2. charAt() : char
+			// char ch = jumin.charAt(0); //1,2,3..
+			// int n = Integer.parseInt(ch+"");
+			// String num = String.valueOf(ch);
+			// int n = Integer.parseInt(num);
 
-		System.out.println("하이픈(-)을 포함해서 주민번호를 입력하세요.");
-		number = sc.next();
+			if (i == 6) {
+				continue;
+			}
 
-		int add = Integer.parseInt(number.substring(0, 6));
-
-		//System.out.println(add);
-		//char ch = number.charAt(0);
-		//System.out.println(ch);
-
-		for (int i = 0; i < 6; i++) {
-			char ch = number.charAt(i);
-			System.out.print(ch);
-			
+			int n = Integer.parseInt(String.valueOf(jumin.charAt(i)));
+			sum = sum + n * count;
+			count++;
 		}
+
+		int check = sum % 11;
+
+		check = 11 - check;
+
+		if (check > 9) {
+			check = check % 10;
+		}
+
+		// check용번호
+		int checkNum = Integer.parseInt(String.valueOf(jumin.charAt(jumin.length() - 1)));
+
+		if (check == checkNum) {
+			System.out.println("정상 주민번호");
+		} else {
+			System.out.println("비정상 주민번호");
+		}
+
 	}
 }
 
