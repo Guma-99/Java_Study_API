@@ -49,6 +49,7 @@ public class WeatherService {
 	
 	private void remove(ArrayList<CityDTO> ar) {
 		System.out.println("삭제하려는 도시명");
+		
 
 	}
 }
